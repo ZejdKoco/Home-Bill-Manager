@@ -1,0 +1,31 @@
+﻿<Window x:Class="Bill_Manager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bill_Manager"
+        mc:Ignorable="d"
+        Title="Main" MaxHeight="410" MaxWidth="700" MinHeight="410" MinWidth="700">
+    <Grid HorizontalAlignment="Left"  VerticalAlignment="Top" Height="370"  Width="690"   >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="53*"/>
+            <ColumnDefinition Width="62*"/>
+        </Grid.ColumnDefinitions>
+        <DatePicker x:Name="datum" HorizontalAlignment="Left" Margin="22,212,0,0" VerticalAlignment="Top" Width="216" SelectedDateFormat="Short" Initialized="datum_Initialized"/>
+        <ListBox x:Name="vrsteRacuna" HorizontalAlignment="Left" Height="171" Margin="22,21,0,0" VerticalAlignment="Top" Width="216"/>
+        <Button x:Name="dodajRacunButton" Content="Add New" HorizontalAlignment="Left" Margin="22,303,0,0" VerticalAlignment="Top" Width="216" Click="dodajRacunButton_Click"/>
+        <TextBox x:Name="vrijednostRacunaText" HorizontalAlignment="Left" Height="23" Margin="22,253,0,0" TextWrapping="Wrap" Text="Cijena" VerticalAlignment="Top" Width="216" GotFocus="vrijednostRacunaText_GotFocus" PreviewKeyDown="vrijednostRacunaText_PreviewKeyDown" />
+        <Button x:Name="dodajVrstuRacuna" Content="Add Bill Type" HorizontalAlignment="Left" Margin="278,62,0,0" VerticalAlignment="Top" Width="110" Click="dodajVrstuRacuna_Click" Grid.ColumnSpan="2"/>
+        <ListBox x:Name="prikazRacuna" HorizontalAlignment="Left" Height="261" Margin="97,62,0,0" VerticalAlignment="Top" Width="240" Grid.Column="1"/>
+        <DatePicker x:Name="datumA" HorizontalAlignment="Left" Margin="97,17,0,0" VerticalAlignment="Top" Grid.Column="1" SelectedDateChanged="datumA_SelectedDateChanged"/>
+        <DatePicker x:Name="datumB" HorizontalAlignment="Left" Margin="235,17,0,0" VerticalAlignment="Top" Grid.Column="1" SelectedDateChanged="datumB_SelectedDateChanged"/>
+        <Button x:Name="deleteSelectedBtn" Content="Delete Selected" HorizontalAlignment="Left" Margin="278,216,0,0" VerticalAlignment="Top" Width="110" Grid.ColumnSpan="2" Click="deleteSelectedBtn_Click" />
+        <Button x:Name="deleteAllBtn" Content="Delete All" HorizontalAlignment="Left" Margin="278,303,0,0" VerticalAlignment="Top" Width="110" Grid.ColumnSpan="2" Click="deleteAllBtn_Click"/>
+        <Button x:Name="deleteBufferBtn" Content="Delete in Buffer" HorizontalAlignment="Left" Margin="278,261,0,0" VerticalAlignment="Top" Width="110" Grid.ColumnSpan="2" Click="deleteBufferBtn_Click"/>
+        <Button x:Name="saveButton" Content="Save" HorizontalAlignment="Left" Margin="278,130,0,0" VerticalAlignment="Top" Width="110" Grid.ColumnSpan="2" Click="saveButton_Click"/>
+        <Button x:Name="LoadButton" Content="Load" HorizontalAlignment="Left" Margin="278,172,0,0" VerticalAlignment="Top" Width="110" RenderTransformOrigin="0.492,1.917" Grid.ColumnSpan="2" Click="Button_Click"/>
+        <TextBox x:Name="dodajVrstuRacunaText" HorizontalAlignment="Left" Height="24" Margin="278,17,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" Text="Vrsta Racuna" GotFocus="dodajVrstuRacunaText_GotFocus" Grid.ColumnSpan="2" PreviewKeyDown="dodajVrstuRacunaText_PreviewKeyDown"/>
+        <Button x:Name="obrisiVrstuRacuna" Content="X" HorizontalAlignment="Left" Height="20" Margin="243,21,0,0" VerticalAlignment="Top" Width="20" Click="obrisiVrstuRacuna_Click"/>
+        <StatusBar x:Name="statusBar" HorizontalAlignment="Left" Height="22" Margin="0,348,0,0" VerticalAlignment="Top" Width="690" Grid.ColumnSpan="2"/>
+    </Grid>
+</Window>
